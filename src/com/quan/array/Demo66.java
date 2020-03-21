@@ -1,5 +1,7 @@
 package com.quan.array;
 
+import sun.applet.resources.MsgAppletViewer;
+
 import java.awt.*;
 
 public class Demo66 {
@@ -24,5 +26,25 @@ public class Demo66 {
         //那么我们只需要增大数组长度， 将首位设置为1即可
         temp[0] =1;
         return temp;
+    }
+
+    /**
+     * a < b
+     * @param num1
+     * @param num2
+     */
+    public int demo(int num1,int num2){
+         while (num1<num2){
+             int result = num2/num1;
+             num2=Math.max(num1,result);
+             num1= Math.min(num1,result);
+         }
+         return num1;
+    }
+
+    public static void main(String[] args) {
+        Demo66 demo66 = new Demo66();
+        int demo = demo66.demo(6, 42);
+        System.out.println(demo);
     }
 }
